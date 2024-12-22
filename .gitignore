@@ -13,3 +13,11 @@ build/
 dist/
 *.egg-info/
 
+#data
+data/
+
+#env
+.env
+
+#logs
+logs/
