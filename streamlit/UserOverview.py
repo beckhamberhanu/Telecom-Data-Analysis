@@ -10,9 +10,9 @@ st.set_page_config(page_title="User Overview Analysis", layout="wide")
 st.title("User Overview Analysis")
 
 # Load data
-@st.cache
+@st.cache_data  
 def load_data():
-    return pd.read_csv('data/path_to_task1_results.csv')
+    return pd.read_csv('/path_to_task1_results.csv')
 
 data = load_data()
 
