@@ -1,40 +1,35 @@
 import streamlit as st
 
-st.set_page_config(
-    page_title="Telecom Data Analysis",
-    page_icon="📱",
-    layout="wide"
-)
+# Page configuration
+st.set_page_config(page_title="Telecom Dashboard", layout="wide")
 
-st.title("📱 Telecom Data Analysis Dashboard")
-st.sidebar.success("Select a page above.")
-
-st.markdown("""
-### Welcome to the Telecom Data Analysis Dashboard
-
-This dashboard provides comprehensive insights into telecom user data across multiple dimensions:
-
-#### 📊 Available Analysis Pages:
-
-1. **User Overview Analysis**
-   - Basic user statistics
-   - Demographics
-   - User status distribution
-
-2. **User Engagement Analysis**
-   - Usage patterns
-   - Activity metrics
-   - Engagement trends
-
-3. **Experience Analysis**
-   - Service quality metrics
-   - Network performance
-   - Technical indicators
-
-4. **Satisfaction Analysis**
-   - Customer satisfaction scores
-   - Feedback analysis
-   - Retention metrics
-
-Please select a page from the sidebar to explore detailed analysis in each area.
+# Title and Description
+st.title("Telecom Data Analysis Dashboard")
+st.write("""
+Welcome to the Telecom Data Analysis Dashboard!  
+Navigate through the analysis pages to explore insights:
+- **User Overview Analysis**: Analyze top handsets, manufacturers, and insights.
+- **User Engagement Analysis**: Explore customer engagement metrics.
+- **User Experience Analysis**: Understand customer experience and QoS metrics.
 """)
+
+# Navigation Buttons
+col1, col2, col3 = st.columns(3)
+with col1:
+    if st.button("Go to User Overview Analysis"):
+        st.experimental_set_query_params(page="UserOverview")
+        st.experimental_rerun()
+
+with col2:
+    if st.button("Go to User Engagement Analysis"):
+        st.experimental_set_query_params(page="UserEngagement")
+        st.experimental_rerun()
+
+with col3:
+    if st.button("Go to User Experience Analysis"):
+        st.experimental_set_query_params(page="UserExperience")
+        st.experimental_rerun()
+
+# Footer
+st.write("---")
+st.write("Built with Streamlit | [GitHub Repository](https://github.com/YourGitHubRepo)")
