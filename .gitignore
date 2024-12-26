@@ -25,3 +25,6 @@ logs/
 #streamlit
 streamlit/telecom_env/
 tele_env/
+
+#notebooks
+notebooks/Satisfaction_Analysis.ipynb
